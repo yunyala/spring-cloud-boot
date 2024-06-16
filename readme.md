@@ -1,0 +1,3 @@
+## 项目介绍
+
+SpringCloud脚手架项目，基于常见的SpringCloud和SpringCloudAlibaba组件，实现开发必要的基础功能。通过该项目，你可以快速搭建一个企业级的微服务项目。
