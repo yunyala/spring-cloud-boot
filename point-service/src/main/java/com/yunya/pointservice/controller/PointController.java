@@ -1,10 +1,9 @@
 package com.yunya.pointservice.controller;
 
+import com.yunya.commonmodule.entity.Order;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/point")
@@ -24,6 +23,16 @@ public class PointController {
     public String testGetConfigInfo() {
         System.out.println("testGetConfigInfo function...");
         return "testGetConfigInfo function...{}" + configInfo;
+    }
+
+    @PostMapping("/add")
+    public String addPoint(@RequestBody Order order) {
+        return "add point success!商品名称："+order.getProductionName();
+    }
+
+    @PostMapping("/add2")
+    public String addPoint2(@RequestParam("productionName") String productionName) {
+        return "add point success!商品名称222："+ productionName;
     }
 
 }
