@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: gateway-service # 服务名称
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        group: spring-cloud-boot-project  # group用于配置项目，namespace用于配置环境
+      config:
+        file-extension: yml # 文件后缀名
+        group: spring-cloud-boot-project
+#        shared-configs: # 共享配置
+#          - dataId: shared-jdbc.yml # 共享mybatis配置
+#          - dataId: shared-log.yml # 共享日志配置
+#          - dataId: shared-swagger.yml # 共享日志配置
